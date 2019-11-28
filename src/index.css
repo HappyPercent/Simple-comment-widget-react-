@@ -1,0 +1,86 @@
+body, html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.comments-react {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    background-color: rgb(148, 140, 255);
+}
+
+.comments{
+    color: rgb(19, 19, 19);
+    width: 50%;
+    font-size: 20px;
+}
+
+.comment {
+    border-top: 1px solid rgba(44, 44, 44, 0.383);
+    border-bottom: 1px solid rgba(44, 44, 44, 0.383);
+    margin-bottom: 5px;
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.418);
+}
+
+.comment__delete-button {
+    min-width: 18px;
+    height: 18px;
+    background-color: transparent; 
+    outline: none; 
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    margin-left: 10px;
+}
+.comment__delete-button::after, .comment__delete-button::before {
+    content: '';
+    height: 20px;
+    width: 2px;
+    position: absolute;
+    background-color: rgb(146, 0, 0);
+    left: 0;bottom: 0;right: 0;top: 0;
+    margin: auto 0;
+}
+.comment__delete-button::after {
+    transform: rotate(45deg);
+}
+.comment__delete-button::before {
+    transform: rotate(315deg);
+}
+
+.comment__author, .comment__dateTime {
+    font-size: 17px;
+    display: flex;
+    justify-content: flex-end;
+    color: rgba(19, 19, 19, 0.459);
+}
+
+.comment__author, .comment__text {
+    word-wrap: break-word;
+}
+
+.comments__input {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.418);
+}
+
+.comments__input--text {
+    height: 100px;
+}
