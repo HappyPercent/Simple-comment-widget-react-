@@ -32,7 +32,6 @@ let CommentBlock = (props) => {
             <NewComment 
                 currentAuthor={ currentAuthor }
                 currentText={ currentText }
-                comments={ comments }
             />
         </div>
     )

@@ -6,7 +6,7 @@ import myStateToProps from '../containers/CommentBlock';
 
 const NewComment = (props) => {
     
-    const { currentAuthor, currentText, comments } = props;
+    const { currentAuthor, currentText } = props;
     
     return (
         <div className="comments__new">
@@ -19,7 +19,7 @@ const NewComment = (props) => {
                 onKeyDown={ev => {
                     if(ev.keyCode === 13) {
                         ev.preventDefault();
-                        props.dispatch(addComment( currentText, currentAuthor, comments ));
+                        props.dispatch(addComment( currentText, currentAuthor ));
                     }
                 }}
             ></input>
@@ -30,7 +30,7 @@ const NewComment = (props) => {
                 onKeyDown={ev => {
                     if(ev.keyCode === 13) {
                         ev.preventDefault();
-                        props.dispatch(addComment( currentText, currentAuthor, comments ));
+                        props.dispatch(addComment( currentText, currentAuthor ));
                     }
                 }}
                 onChange={ev => props.dispatch(updateInput(ev.target.value, "text"))}

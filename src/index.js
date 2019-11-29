@@ -2,11 +2,12 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import CommentBlock from './containers/CommentBlock';
 import reducers from './reducers/reducers';
+import checkAvaliableID from './enhancers/checkAvaliableID';
 
 document.querySelector('body').innerHTML = '<div class="comments-react">,</div>';
 
@@ -36,7 +37,7 @@ const initialState = () => {
     };
 };
 
-const store = createStore(reducers, initialState());
+const store = createStore(reducers, initialState(), applyMiddleware(checkAvaliableID));
 
 ReactDOM.render(
     <Provider store={store}>
