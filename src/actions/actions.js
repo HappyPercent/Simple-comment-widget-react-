@@ -5,32 +5,18 @@ export const deleteComment = (id) => {
         id: id
     }
 };
-export const addComment = (text, author, comments) => {
+export const addComment = (text, author) => {
     const currentDate = new Date();
     const dateTime = 
         [currentDate.getDay(), currentDate.getMonth(), currentDate.getFullYear()].join('.') 
         + ' ' 
         + [currentDate.getHours(), currentDate.getMinutes()].join(':');
-    
-    let nextCommentID;
-
-    if (comments.length < 1) {
-        nextCommentID = 0;
-    } else {
-        let allIDs = [];
-
-        for (let i = 0; i < comments.length; i++) {
-            allIDs.push(comments[i].id)
-        }
-        nextCommentID = Math.max.apply(null, allIDs) + 1;
-    }
 
     return {
         type: "ADD_COMMENT",
         author: author,
         text: text,
         dateTime: dateTime,
-        id: nextCommentID,
     }
 };
 export const updateInput = (currentInput, fieldType) => {
